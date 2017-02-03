@@ -6,14 +6,20 @@
         });
         $stateProvider.state('landing', {
             url: '/'
+<<<<<<< HEAD
             , controller: 'LandingCtrl as landing'
+=======
+>>>>>>> a3
             , templateUrl: '/templates/landing.html'
         }).state('album', {
             url: '/album'
             , templateUrl: '/templates/album.html'
         }).state('collection', {
             url: '/collection'
+<<<<<<< HEAD
             , controller: 'CollectionCtrl as collection'
+=======
+>>>>>>> a3
             , templateUrl: '/templates/collection.html'
         });
     }
