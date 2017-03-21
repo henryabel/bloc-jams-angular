@@ -17,6 +17,7 @@
             , controller: 'CollectionCtrl as collection'
             , templateUrl: '/templates/collection.html'
         });
+        // Ryan was here
     }
     angular.module('blocJams', ['ui.router']).config(config);
 })();
