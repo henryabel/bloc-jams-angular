@@ -1,5 +1,8 @@
 (function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a5
     function config($stateProvider, $locationProvider) {
         $locationProvider.html5Mode({
             enabled: true
@@ -11,6 +14,10 @@
             , templateUrl: '/templates/landing.html'
         }).state('album', {
             url: '/album'
+<<<<<<< HEAD
+=======
+            , controller: 'AlbumCtrl as album'
+>>>>>>> a5
             , templateUrl: '/templates/album.html'
         }).state('collection', {
             url: '/collection'
@@ -18,6 +25,7 @@
             , templateUrl: '/templates/collection.html'
         });
     }
+<<<<<<< HEAD
 =======
     function config($stateProvider, $locationProvider) {}
     $locationProvider.html5Mode({
@@ -37,5 +45,7 @@
         , templateUrl: '/templates/collection.html'
     });
 >>>>>>> c5
+=======
+>>>>>>> a5
     angular.module('blocJams', ['ui.router']).config(config);
 })();
