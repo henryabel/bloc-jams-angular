@@ -10,10 +10,7 @@
             , templateUrl: '/templates/landing.html'
         }).state('album', {
             url: '/album'
-<<<<<<< HEAD
-=======
             , controller: 'AlbumCtrl as album'
->>>>>>> a5
             , templateUrl: '/templates/album.html'
         }).state('collection', {
             url: '/collection'
