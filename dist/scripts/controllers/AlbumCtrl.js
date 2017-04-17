@@ -1,7 +1,6 @@
 (function () {
-    function AlbumCtrl() {
-        this.albumData = albumPicasso;
-        console.log(this.albumData);
+    function AlbumCtrl(Fixtures) {
+        this.albumData = Fixtures.getAlbum();
     }
-    angular.module('blocJams').controller('AlbumCtrl', AlbumCtrl);
+    angular.module('blocJams').controller('AlbumCtrl', ['Fixtures', AlbumCtrl]);
 })();
