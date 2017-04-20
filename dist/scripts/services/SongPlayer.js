@@ -1,6 +1,10 @@
  (function () {
      function SongPlayer() {
          var SongPlayer = {};
+         /**
+          * @desc Keeps track of the current song
+          * @type {Object}
+          */
          var currentSong = null;
          /**
           * @desc Buzz object audio file
@@ -23,11 +27,26 @@
              });
              currentSong = song;
          };
+         /**
+          * @function playSong
+          * @desc Plays currently playing song and and sets the song playing property to true
+          * @param {Object} song
+          */
+         var playSong = function (song) {
+                 currentBuzzObject.play();
+                 song.playing = true;
+             }
+             /**
+              * @method SongPlayer.play
+              * @desc Checks if the currently playing song is different from the current song.
+                If it isn't, the nit ssets the song to the click-on song and plays it.  Otherwise
+                it plays the song provided it was paused at the time of the click.
+              * @param {Object} song
+              */
          SongPlayer.play = function (song) {
              if (currentSong !== song) {
                  setSong(song);
-                 currentBuzzObject.play();
-                 song.playing = true;
+                 playSong(song);
              }
              else if (currentSong === song) {
                  if (currentBuzzObject.isPaused()) {
@@ -35,6 +54,11 @@
                  }
              }
          };
+         /**
+          * @function playSong
+          * @desc Pauses currently playing song and and sets the song playing property to false
+          * @param {Object} song
+          */
          SongPlayer.pause = function (song) {
              currentBuzzObject.pause();
              song.playing = false;
