@@ -21,11 +21,13 @@
                   * @type {Number}
                   */
                  SongPlayer.currentTime = null;
+                 SongPlayer.volume = null;
              }
              currentBuzzObject = new buzz.sound(song.audioUrl, {
                  formats: ['mp3']
                  , preload: true
              });
+             SongPlayer.volume = currentBuzzObject.getVolume();
              SongPlayer.currentSong = song;
              currentBuzzObject.bind('timeupdate', function () {
                  $rootScope.$apply(function () {
@@ -115,6 +117,11 @@
          SongPlayer.setCurrentTime = function (time) {
              if (currentBuzzObject) {
                  currentBuzzObject.setTime(time);
+             }
+         };
+         SongPlayer.setVolume = function (volume) {
+             if (currentBuzzObject) {
+                 currentBuzzObject.setVolume(volume);
              }
          };
          return SongPlayer;
