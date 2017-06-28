@@ -52,8 +52,10 @@
               * @param {Object} song
               */
          SongPlayer.play = function (song) {
+             debugger;
              song = song || SongPlayer.currentSong;
              if (SongPlayer.currentSong !== song) { //#4
+                 debugger;
                  setSong(song);
                  playSong(song);
              }
@@ -61,6 +63,7 @@
                  if (currentBuzzObject.isPaused()) {
                      currentBuzzObject.play();
                  }
+                 playSong(song);
              }
          };
          var getSongIndex = function (song) {
